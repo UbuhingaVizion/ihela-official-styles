@@ -1,0 +1,81 @@
+.ihela-monitor-box {
+  .ihela-icon-larger {
+    @extend .has-p-small;
+    display: inline-block;
+    width: auto;
+    border-radius: 50%;
+  }
+
+  .ihela-monitor {
+    &-header {
+      @extend .is-clearfix;
+      @extend .has-pb-small;
+
+      border-bottom: 1px solid lighten($dark, 50%);
+    }
+
+    &-icon {
+      &-default {
+        @extend .ihela-icon-larger;
+        @extend .has-background-icon;
+      }
+
+      &-white {
+        @extend .ihela-icon-larger;
+        @extend .has-background-white-icon;
+      }
+
+      &-info {
+        @extend .ihela-icon-larger;
+        @extend .has-background-info-icon;
+        @extend .has-text-white;
+      }
+
+      &-primary {
+        @extend .ihela-icon-larger;
+        @extend .has-background-primary-icon;
+        @extend .has-text-white;
+      }
+
+      &-warning {
+        @extend .ihela-icon-larger;
+        @extend .has-background-warning-icon;
+        @extend .has-text-white;
+      }
+
+      &-dark {
+        @extend .ihela-icon-larger;
+        @extend .has-background-dark-icon;
+      }
+    }
+  }
+}
+
+.ihela-next-box {
+  margin-top: $ihela-next-box-margin-top;
+  position: relative;
+}
+
+#floating-tools-block {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  opacity: 0.85;
+  @extend .has-mx-large;
+  @extend .has-mb-large;
+  @extend .has-pr-small;
+
+  max-width: 500px;
+  min-height: 50vh;
+  max-height: 85vh;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .floating-main {
+    width: 400px;
+    min-height: 50vh;
+    max-height: 75vh;
+  }
+}

@@ -1,0 +1,35 @@
+.ng-autocomplete {
+  width: 100% !important;
+
+  input {
+    @extend .input;
+  }
+}
+
+.autocomplete-container {
+  box-shadow: none !important;
+
+  .input-container input {
+    @extend .input;
+    background-color: $input-background-color !important;
+  }
+}
+
+.autocomplete-container {
+  box-shadow: none !important;
+}
+
+.datetimepicker-dummy .datetimepicker-dummy-wrapper {
+  background-color: $input-background-color !important;
+  border: none;
+  border-radius: $input-radius;
+  // @extend .input;
+}
+
+.ng-valid.ng-touched {
+  @extend .is-success;
+}
+
+.ng-invalid:not(form).ng-touched {
+  @extend .is-primary;
+}

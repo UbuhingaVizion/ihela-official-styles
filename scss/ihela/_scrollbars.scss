@@ -1,0 +1,34 @@
+.overflow{
+  @include transition(all .3s ease);
+  // @include scrollbars(0px, $ihelared, $hide:true);
+  @include scrollbars(8px, $grey);
+
+  // &:hover{
+  //   @include scrollbars(8px, $ihelared, mix($ihelared, white,  5%));
+  // }
+}
+
+.is-overflow{
+  @extend .overflow;
+  overflow: auto;
+
+  &-y{
+    @extend .overflow;
+    overflow-y: auto;
+
+    &-force{
+      @extend .overflow;
+      overflow-y: scroll;
+    }
+  }
+
+  &-x{
+    @extend .overflow;
+    overflow-x: auto;
+
+    &-force{
+      @extend .overflow;
+      overflow-x: scroll;
+    }
+  }
+}
