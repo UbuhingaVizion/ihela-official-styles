@@ -1,0 +1,397 @@
+body {
+  min-height: 100vh;
+}
+
+.modal-content {
+  margin: 0 auto;
+  max-height: calc(100vh - 40px);
+  width: 640px;
+}
+
+.ihela {
+  &-box {
+    @extend .box;
+    @extend .has-shadow;
+    @extend .is-rounded;
+  }
+
+  &-confirm {
+    @extend .box;
+    // width: 33.333333333vw !important;
+    // margin: auto !important;
+  }
+
+  &-table {
+    @extend .table;
+    @extend .is-bordered;
+    @extend .has-mb;
+    @extend .is-narrow;
+    @extend .is-striped;
+    @extend .is-hoverable;
+    @extend .is-fullwidth;
+  }
+}
+
+.is {
+  // Texts
+  &-size {
+    &-8 {
+      font-size: 0.5rem;
+    }
+  }
+
+  &-pointer {
+    cursor: pointer !important;
+  }
+
+  &-help {
+    @extend .is-muted;
+    @extend .is-size-7;
+  }
+
+  &-muted {
+    @extend .has-text-grey-light;
+  }
+
+  // Blocks
+  &-rounded {
+    @include rounded();
+
+    &-xsmall {
+      @include rounded(0.05rem);
+    }
+
+    &-small {
+      @include rounded(0.2rem);
+    }
+
+    &-large {
+      @include rounded(1.5rem);
+    }
+
+    &-xlarge {
+      @include rounded(2rem);
+    }
+  }
+
+  &-badge {
+    padding: 2px;
+    @extend .is-rounded-small;
+
+    &.is-dark {
+      @extend .has-text-white;
+    }
+  }
+
+  &-bank {
+    @extend .is-hoverable-bis;
+    @extend .is-paddingless;
+    @extend .is-marginless;
+    @extend .is-rounded;
+    @extend .has-text-centered;
+    @extend .has-mx;
+
+    &.is-active,
+    & .is-active {
+      @extend .has-background-white-ter;
+      @extend .is-rounded;
+    }
+
+    &-img {
+      @extend .has-mx-auto;
+      height: 70px !important;
+      width: auto !important;
+    }
+  }
+
+  &-hoverable-bis {
+    @include transition(all 0.2s ease-in-out);
+    &:hover {
+      @extend .has-background-white-ter;
+      cursor: pointer;
+
+      transform: scale(1.05);
+      @include box-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+    }
+  }
+
+  &-mobile-only {
+    @extend .is-block-mobile;
+    @extend .is-hidden-tablet;
+  }
+
+  &-notfor-mobile {
+    @extend .is-hidden-mobile;
+    @extend .is-block-tablet;
+  }
+}
+
+.has {
+  &-background-overlay {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  &-shadow {
+    @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+  }
+
+  &-shadow-large {
+    @include box-shadow(0 3px 10px rgba(0, 0, 0, 0.2));
+  }
+
+  &-border {
+    border: 1px solid $input-border-color !important;
+  }
+
+  &-m {
+    & {
+      @include margin();
+    }
+    &t {
+      @include margin(top);
+    }
+    &l {
+      @include margin(left);
+    }
+    &r {
+      @include margin(right);
+    }
+    &b {
+      @include margin(bottom);
+    }
+    &x {
+      @include margin(left);
+      @include margin(right);
+    }
+    &y {
+      @include margin(top);
+      @include margin(bottom);
+    }
+  }
+
+  &-p {
+    & {
+      @include padding();
+    }
+    &t {
+      @include padding(top);
+    }
+    &l {
+      @include padding(left);
+    }
+    &r {
+      @include padding(right);
+    }
+    &b {
+      @include padding(bottom);
+    }
+    &x {
+      @include padding(left);
+      @include padding(right);
+    }
+    &y {
+      @include padding(top);
+      @include padding(bottom);
+    }
+  }
+}
+
+.is-over-block {
+  position: relative;
+  top: -40px;
+}
+
+.ihela {
+  &-footer {
+    font-size: $footer-font-size;
+  }
+}
+
+.has-background-icon {
+  @include background-icon($beige-lighter);
+}
+
+.has-background-dark-icon {
+  @include background-icon($dark);
+}
+
+.has-background-white-icon {
+  @include background-icon($white);
+}
+
+.has-background-info-icon {
+  @include background-icon($info);
+}
+
+.has-background-primary-icon {
+  @include background-icon($primary);
+}
+
+.has-background-warning-icon {
+  @include background-icon($warning);
+}
+
+.has-background-dark-icon {
+  @include background-icon($dark);
+}
+
+.has-background-double {
+  @extend .has-background-primary;
+  @include background-double($ihelared);
+}
+
+.has-background-primary-double {
+  @extend .has-background-double;
+}
+
+.has-background-dark-double {
+  @extend .has-background-dark;
+  @include background-double($dark);
+}
+
+.ihela-top-box {
+  @extend .has-background-double;
+  @extend .has-px-large;
+  @extend .has-pt-small;
+
+  min-height: 30vh;
+  z-index: -1;
+  padding-bottom: ($ihela-next-box-margin-top * -1) + 15px;
+}
+
+.login-box {
+  @extend .has-mx-auto;
+
+  width: 350px !important;
+}
+
+.agent-main-aside {
+  @extend .has-background-white;
+  @extend .has-shadow;
+  position: fixed;
+  width: $aside-width;
+  height: 100vh;
+}
+
+.agent-main-box {
+  margin-left: $aside-width;
+}
+
+.navbar-item {
+  position: static;
+}
+
+body.auth-body {
+  background: url('./assets/images/bg1.jpg') no-repeat fixed !important;
+  background-size: 100% 100% !important;
+}
+
+body.agent-auth-body {
+  .agent-main-box {
+    margin-left: 0 !important;
+  }
+
+  .agent-main-aside {
+    display: none;
+  }
+}
+
+.modal-card {
+  height: calc(100vh - 50px);
+}
+
+.badge {
+  @extend .tag;
+  padding: 0.75px !important;
+  font-size: 0.5rem !important;
+
+  &-info {
+    @extend .is-info;
+  }
+
+  &-primary {
+    @extend .is-primary;
+  }
+
+  &-danger {
+    @extend .is-danger;
+  }
+
+  &-warning {
+    @extend .is-warning;
+  }
+
+  &-success {
+    @extend .is-success;
+  }
+
+  &-primary {
+    @extend .is-primary;
+  }
+
+  &-secondary {
+    @extend .is-dark;
+  }
+}
+
+.tag-circle {
+  border-radius: 50%;
+  display: inline-block;
+  margin: auto;
+
+  &:hover {
+    @extend .has-shadow;
+    &.is-indication {
+      cursor: pointer;
+      height: 11.5px;
+      width: 11.5px;
+    }
+  }
+
+  &.is-indication {
+    height: 10px;
+    width: 10px;
+  }
+
+  &.is-default {
+    @extend .has-background-light;
+  }
+
+  &.is-primary {
+    @extend .has-background-primary;
+  }
+
+  &.is-info {
+    @extend .has-background-info;
+  }
+
+  &.is-danger {
+    @extend .has-background-danger;
+  }
+
+  &.is-warning {
+    @extend .has-background-warning;
+  }
+
+  &.is-success {
+    @extend .has-background-success;
+  }
+}
+
+.button {
+  &.is-circle-rounded {
+    padding: 5px;
+    border-radius: 50%;
+
+    & {
+      font-size: 20px;
+    }
+    &.is-large {
+      width: 50px;
+      font-size: 20px;
+    }
+    &.is-small {
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "ihela-official-styles",
+  "version": "0.0.1",
+  "description": "iHela Official Styles with SASS",
+  "main": "index.scss",
+  "repository": "https://github.com/ubuviz/ihela-official-styles.git",
+  "author": "Pierre-Claver Koko Banywerha <pierreclaverkoko@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@wizishop/ng-wizi-bulma": "^9.1.1",
+    "bulma": "^0.8.2",
+    "bulma-extensions": "^6.2.7"
+  }
+}

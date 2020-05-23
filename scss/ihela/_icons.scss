@@ -1,0 +1,16 @@
+@mixin famixin($icon) {
+  .fa {
+    &s {
+      @extend .las;
+    }
+    &b {
+      @extend .lab;
+    }
+
+    .&-#{$icon} {
+      @extend .la-#{$icon};
+    }
+  }
+}
+
+@include famixin('lock-open');

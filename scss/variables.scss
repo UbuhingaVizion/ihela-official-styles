@@ -1,0 +1,44 @@
+// $ihelared-light: #a30000;
+$ihelared-light: #f70000;
+$ihelared: #810019;
+$brown: #757763;
+$beige-light: #d0d1cd;
+$beige-lighter: #eff0eb;
+
+$primary: $ihelared;
+$warning: #edbc37;
+$danger: $ihelared-light;
+$link: $ihelared;
+
+// MARGINS AND PADDINGS
+
+$margin-normal: 20px;
+$margin-large: 50px;
+$margin-small: 10px;
+
+$ihela-next-box-margin-top: -75px;
+
+$padding-normal: 20px;
+$padding-large: 50px;
+$padding-small: 10px;
+
+$padding-content-x: 200px;
+
+// Update some of Bulma's component variables
+
+$control-border-width: 2px;
+$input-background-color: $beige-lighter;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// Modal variables
+$modal-card-head-background-color: #fff;
+$modal-card-head-padding: 10px;
+$modal-content-width: calc(100vw - 30px);
+
+// FOOTER
+
+$footer-font-size: 12px;
+
+// MENUS
+$aside-width: 200px;

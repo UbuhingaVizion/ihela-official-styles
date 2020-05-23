@@ -1,0 +1,60 @@
+.dropdown-parent {
+  // display: inline-block;
+  position:relative;
+  cursor: pointer;
+
+  & .dropdown{
+    display: none;
+    z-index: 3000;
+
+    & .list {
+      @extend .has-background-white;
+    }
+
+    & .list-item {
+      @extend .has-background-white;
+      @extend .is-size-7;
+
+      &:hover {
+        @extend .has-background-white-bis;
+      }
+    }
+  }
+  &:hover .dropdown {
+    display: block;
+    position: absolute;
+    width: 250px;
+
+    &.is-small {
+      width: 150px!important;
+    }
+
+    &.is-right {
+      right: 0;
+    }
+
+    &.is-left {
+      left: 0;
+    }
+  }
+}
+
+.menu-list {
+  & .list-item {
+    @extend .has-background-white;
+    // @extend .is-size-7;
+
+    &.is-active, &:active {
+      @extend .has-background-white-bis;
+      @extend .has-text-primary;
+
+      &:hover {
+        @extend .has-text-dark;
+      }
+    }
+
+    &.is-hover, &:hover {
+      @extend .has-background-white-bis;
+    }
+  }
+}

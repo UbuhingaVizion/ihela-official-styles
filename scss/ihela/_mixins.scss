@@ -1,0 +1,283 @@
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow !important;
+  -moz-box-shadow: $shadow !important;
+  box-shadow: $shadow !important;
+}
+
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, 0.4)) {
+  text-shadow: $x $y $blur $color;
+}
+
+@mixin rounded_mixin($radius: 0.5em) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin rounded($radius: 0.5em) {
+  // display: inline-block;
+  &-1 {
+    @include rounded_mixin($radius 0 0 0);
+  }
+
+  &-2 {
+    @include rounded_mixin(0 $radius 0 0);
+  }
+
+  &-3 {
+    @include rounded_mixin(0 0 $radius 0);
+  }
+
+  &-4 {
+    @include rounded_mixin(0 0 0 $radius);
+  }
+
+  &-top {
+    @include rounded_mixin($radius $radius 0 0);
+  }
+  &-right {
+    @include rounded_mixin(0 $radius $radius 0);
+  }
+  &-left {
+    @include rounded_mixin($radius 0 0 $radius);
+  }
+  &-none {
+    @include rounded_mixin(none);
+  }
+  & {
+    @include rounded_mixin($radius);
+  }
+}
+
+@mixin gradient($start-color, $end-color, $orientation: 'vertical') {
+  background: $start-color;
+  @if $orientation == 'vertical' {
+    background: -webkit-linear-gradient(top, $start-color, $end-color);
+    background: linear-gradient(to bottom, $start-color, $end-color);
+  } @else if $orientation == 'horizontal' {
+    background: -webkit-linear-gradient(left, $start-color, $end-color);
+    background: linear-gradient(to right, $start-color, $end-color);
+  } @else {
+    background: -webkit-radial-gradient(
+      center,
+      ellipse cover,
+      $start-color,
+      $end-color
+    );
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}
+
+// MARGIN & PADDING
+
+@mixin margin_mixin($value, $position: null) {
+  @if $position == 'top' {
+    margin-top: $value;
+  } @else if $position == 'right' {
+    margin-right: $value;
+  } @else if $position == 'bottom' {
+    margin-bottom: $value;
+  } @else if $position == 'left' {
+    margin-left: $value;
+  } @else {
+    margin: $value;
+  }
+}
+
+@mixin margin($position: null) {
+  // display: inline-block;
+  &-small {
+    @include margin_mixin($margin-small, $position);
+  }
+  &-large {
+    @include margin_mixin($margin-large, $position);
+  }
+  &-auto {
+    @include margin_mixin(auto, $position);
+  }
+  &-none {
+    @include margin_mixin(none, $position);
+  }
+  & {
+    @include margin_mixin($margin-normal, $position);
+  }
+}
+
+@mixin padding_mixin($value, $position: null) {
+  @if $position == 'top' {
+    padding-top: $value;
+  } @else if $position == 'right' {
+    padding-right: $value;
+  } @else if $position == 'bottom' {
+    padding-bottom: $value;
+  } @else if $position == 'left' {
+    padding-left: $value;
+  } @else {
+    padding: $value;
+  }
+}
+
+@mixin padding($position: null) {
+  // display: inline-block;
+  &-small {
+    @include padding_mixin($padding-small, $position);
+  }
+  &-large {
+    @include padding_mixin($padding-large, $position);
+  }
+  &-auto {
+    @include padding_mixin(auto, $position);
+  }
+  &-none {
+    @include padding_mixin(none, $position);
+  }
+  & {
+    @include padding_mixin($padding-normal, $position);
+  }
+}
+
+// BACKGROUND
+
+@mixin background($imgpath, $position: 0 0, $repeat: no-repeat) {
+  background: {
+    image: url($imgpath);
+    position: $position;
+    repeat: $repeat;
+  }
+}
+
+// POSITIONING
+
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
+    {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+  position: $position;
+}
+
+// Positioning helpers
+@mixin absolute($args: '') {
+  @include position(absolute, $args);
+}
+
+@mixin fixed($args: '') {
+  @include position(fixed, $args);
+}
+
+@mixin relative($args: '') {
+  @include position(relative, $args);
+}
+
+// REM UTILITIES
+
+@mixin font-size($size, $base: 16) {
+  font-size: $size; // fallback for old browsers
+  font-size: ($size / $base) * 1rem;
+}
+
+// KEYFRAMES
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// TRANSITIONS
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+/// Mixin to customize scrollbars
+/// Beware, this does not work in all browsers
+/// @author Hugo Giraudel
+/// @param {Length} $size - Horizontal scrollbar's height and vertical scrollbar's width
+/// @param {Color} $foreground-color - Scrollbar's color
+/// @param {Color} $background-color [mix($foreground-color, white, 50%)] - Scrollbar's color
+/// @example scss - Scrollbar styling
+///   @include scrollbars(.5em, slategray);
+@mixin scrollbars(
+  $size,
+  $foreground-color,
+  $background-color: mix($foreground-color, white, 5%),
+  $hide: false
+) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    @include transition(all 0.3s ease);
+    @include rounded();
+
+    width: $size;
+    height: $size;
+
+    &:hover {
+      @if $hide {
+        width: 0px;
+        height: 0px;
+      } @else {
+        width: $size;
+        height: $size;
+      }
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba($foreground-color, 1);
+    @include rounded();
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba($background-color, 1);
+    @include rounded();
+  }
+
+  // For Firefox
+  scrollbar-color: rgba($foreground-color, 1) rgba($background-color, 1);
+  @if $hide {
+    scrollbar-width: none;
+  } @else {
+    scrollbar-width: thin;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@mixin background-double($color) {
+  background: linear-gradient(
+      333deg,
+      rgba(darken($color, 20%), 0.85) 0%,
+      rgba($color, 0.85) 50%,
+      rgba($color, 0.85) 100%
+    ),
+    url('./assets/images/linear_bg.jpg');
+}
+
+@mixin background-icon($color) {
+  background: linear-gradient(
+      333deg,
+      rgba($color, 0.85) 0%,
+      rgba(darken($color, 10%), 0.85) 35%,
+      rgba(darken($color, 20%), 0.85) 55%,
+      rgba(darken($color, 30%), 0.85) 100%
+    );
+}
