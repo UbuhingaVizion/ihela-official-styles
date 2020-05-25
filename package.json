@@ -1,6 +1,6 @@
 {
   "name": "ihela-official-styles",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "iHela Official Styles with SASS",
   "main": "index.scss",
   "repository": "https://github.com/ubuviz/ihela-official-styles.git",
