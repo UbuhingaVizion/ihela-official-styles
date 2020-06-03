@@ -1,5 +1,5 @@
 {
-  "name": "ihela-official-styles",
+  "name": "@ihelacu/official-styles",
   "version": "0.0.2",
   "description": "iHela Official Styles with SASS",
   "main": "index.scss",
