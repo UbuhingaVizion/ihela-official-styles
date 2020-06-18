@@ -8,6 +8,17 @@ body {
   width: 640px;
 }
 
+#aside-content {
+  // height: calc(100vh - 80px); position: sticky; top: 80px;
+
+  @include desktop {
+    height: calc(100vh - 80px);
+    position: sticky;
+    top: 80px;
+  }
+}
+
+
 .ihela {
   &-box {
     @extend .box;
