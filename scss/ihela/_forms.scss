@@ -33,3 +33,19 @@
 .ng-invalid:not(form).ng-touched {
   @extend .is-primary;
 }
+
+fieldset.fieldset {
+  @extend .has-background-white-bis;
+  @extend .is-rounded;
+  @extend .has-p-small;
+  @extend .has-mb-small;
+
+  legend {
+    @extend .has-background-white;
+    @extend .has-p-small;
+    @extend .is-rounded;
+    @extend .title;
+    @extend .is-marginless;
+    @extend .is-6;
+  }
+}
