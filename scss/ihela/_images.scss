@@ -25,7 +25,8 @@
   position: relative;
   height: 200px;
   // width: 200px;
-  border-radius: 50%;
+  // border-radius: 50%;
+  border-radius: 5px;
   overflow: hidden;
   // box-shadow: 1px 1px 15px -5px black;
   transition: all 0.3s ease;
@@ -52,7 +53,7 @@
     width: 100%;
     transition: all 0.3s ease;
     &:after {
-      font-family: FontAwesome;
+      font-family: LineAwesome;
       content: '\f007';
       top: 0;
       left: 0;
