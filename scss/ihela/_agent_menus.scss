@@ -44,7 +44,7 @@
 }
 
 .menu-list {
-  & .list-item {
+  .list-item {
     @extend .has-background-white;
     // @extend .is-size-7;
 

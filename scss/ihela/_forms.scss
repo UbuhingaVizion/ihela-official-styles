@@ -28,11 +28,11 @@
 }
 
 .ng-valid.ng-touched {
-  @extend .is-success;
+  @extend .is-primary;
 }
 
 .ng-invalid:not(form).ng-touched {
-  @extend .is-primary;
+  @extend .is-danger;
 }
 
 fieldset.fieldset {
