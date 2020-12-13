@@ -292,12 +292,12 @@ body {
   position: static;
 }
 
-body.auth-body {
+body.auth-body, .auth-body {
   background: url('./assets/images/bg1.jpg') no-repeat fixed !important;
   background-size: 100% 100% !important;
 }
 
-body.agent-auth-body {
+body.agent-auth-body, .agent-auth-body {
   .agent-main-box {
     margin-left: 0 !important;
   }
