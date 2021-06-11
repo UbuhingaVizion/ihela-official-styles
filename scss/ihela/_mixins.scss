@@ -281,3 +281,7 @@
       rgba(darken($color, 30%), 0.85) 100%
     );
 }
+
+@mixin desktop($args...) {
+    
+}
