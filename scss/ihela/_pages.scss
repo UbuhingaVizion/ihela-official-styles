@@ -4,7 +4,7 @@
   @extend .is-rounded;
   @extend .has-shadow;
   @extend .has-p-small;
-  @extend .is-size-7;
+  @extend .is-size-7 !optional;
   // border-top: 1px solid $input-background-color;
   // border-bottom: 1px solid $input-background-color;
   // border-right: 1px solid $input-background-color;
@@ -35,7 +35,7 @@
   b, span, small {
     padding-top: 0;
     padding-bottom: 5px;
-    @extend .is-size-7;
+    @extend .is-size-7 !optional;
     // @extend .is-paddingless;
     // @extend .is-marginless;
   }

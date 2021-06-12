@@ -9,6 +9,10 @@ $primary: $ihelared;
 $warning: #edbc37;
 $danger: $ihelared-light;
 $link: $ihelared;
+$dark: #343a40;
+$white: #fff;
+$info: #17a2b8;
+$grey: #6c757d;
 
 // MARGINS AND PADDINGS
 
@@ -30,6 +34,7 @@ $control-border-width: 2px;
 $input-background-color: $beige-lighter;
 $input-border-color: transparent;
 $input-shadow: none;
+$input-radius: 5px;
 
 // Modal variables
 $modal-card-head-background-color: #fff;

@@ -11,35 +11,42 @@ body {
 #aside-content {
   // height: calc(100vh - 80px); position: sticky; top: 80px;
 
-  @include desktop {
-    height: calc(100vh - 80px);
-    position: sticky;
-    top: 80px;
+  
+
+  @if mixin-exists(desktop) {
+    @include desktop {
+      height: calc(100vh - 80px);
+      position: sticky;
+      top: 80px;
+    }
+  }
+  @else {
+    /* Do nothing */
   }
 }
 
 
 .ihela {
   &-box {
-    @extend .box;
+    @extend .box !optional;
     @extend .has-shadow;
     @extend .is-rounded;
   }
 
   &-confirm {
-    @extend .box;
+    @extend .box !optional;
     // width: 33.333333333vw !important;
     // margin: auto !important;
   }
 
   &-table {
-    @extend .table;
-    @extend .is-bordered;
+    @extend .table !optional;
+    @extend .is-bordered !optional;
     @extend .has-mb;
-    @extend .is-narrow;
-    @extend .is-striped;
-    @extend .is-hoverable;
-    @extend .is-fullwidth;
+    @extend .is-narrow !optional;
+    @extend .is-striped !optional;
+    @extend .is-hoverable !optional;
+    @extend .is-fullwidth !optional;
   }
 }
 
@@ -57,7 +64,7 @@ body {
 
   &-help {
     @extend .is-muted;
-    @extend .is-size-7;
+    @extend .is-size-7 !optional;
   }
 
   &-muted {
@@ -95,10 +102,10 @@ body {
   }
 
   &-bank {
-    @extend .is-hoverable-bis;
-    @extend .is-paddingless;
-    @extend .is-marginless;
-    @extend .is-rounded;
+    @extend .is-hoverable-bis !optional;
+    @extend .is-paddingless !optional;
+    @extend .is-marginless !optional;
+    @extend .is-rounded !optional;
     @extend .has-text-centered;
     @extend .has-mx;
 

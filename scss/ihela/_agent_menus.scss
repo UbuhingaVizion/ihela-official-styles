@@ -13,7 +13,7 @@
 
     & .list-item {
       @extend .has-background-white;
-      @extend .is-size-7;
+      @extend .is-size-7 !optional;
 
       &:hover {
         @extend .has-background-white-bis;
@@ -46,7 +46,7 @@
 .menu-list {
   .list-item {
     @extend .has-background-white;
-    // @extend .is-size-7;
+    // @extend .is-size-7 !optional;
 
     &.is-active, &:active {
       @extend .has-background-white-bis;
