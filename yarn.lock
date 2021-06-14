@@ -2,17 +2,24 @@
 # yarn lockfile v1
 
 
-"@wizishop/ng-wizi-bulma@^9.1.1":
-  version "9.1.1"
-  resolved "https://registry.yarnpkg.com/@wizishop/ng-wizi-bulma/-/ng-wizi-bulma-9.1.1.tgz#684f319d43d9130710107329e2249b160864496b"
-  integrity sha512-0M963ZcLhRxuo1sQp1hWCRt0uctZAp0rKlFliVYbNDi+lNDE7ecIbFIs2hAebTxjts36A8wQKQMCiyF0keST7w==
+"@wizishop/ng-wizi-bulma@^12.0.0":
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/@wizishop/ng-wizi-bulma/-/ng-wizi-bulma-12.0.0.tgz#ef3da48f52364cc5af8fe1cfa57f1de50df3d2ef"
+  integrity sha512-ScH8d0groNLJ9KWtkxRMc30iXyQkRdSYmx3+KCB8J41f5tpVKPqj6zqftLOScOSGppSQ5fFjkARfX/NBReWP8g==
+  dependencies:
+    tslib "^2.0.0"
 
 bulma-extensions@^6.2.7:
   version "6.2.7"
   resolved "https://registry.yarnpkg.com/bulma-extensions/-/bulma-extensions-6.2.7.tgz#f9f4d1478a7ac1606ae8db1e765aa45e3f12bb31"
   integrity sha512-y3dHsxlCYkuxUg87KKN9H4InM8NCk8tdnrlxLkYak8sd2WQdllg3wP2Nv41lj8X46uPXX2ADP0MO65LlXPHt/Q==
 
-bulma@^0.8.2:
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.8.2.tgz#5d928f16ed4a84549c2873f95c92c38c69c631a7"
-  integrity sha512-vMM/ijYSxX+Sm+nD7Lmc1UgWDy2JcL2nTKqwgEqXuOMU+IGALbXd5MLt/BcjBAPLIx36TtzhzBcSnOP974gcqA==
+bulma@^0.9.2:
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.9.2.tgz#340011e119c605f19b8ca886bfea595f1deaf23c"
+  integrity sha512-e14EF+3VSZ488yL/lJH0tR8mFWiEQVCMi/BQUMi2TGMBOk+zrDg4wryuwm/+dRSHJw0gMawp2tsW7X1JYUCE3A==
+
+tslib@^2.0.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
+  integrity sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==
