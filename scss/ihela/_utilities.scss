@@ -75,7 +75,7 @@ body {
 
   // Blocks
   &-rounded {
-    @include rounded();
+    @include rounded(0.7rem);
 
     &-xsmall {
       @include rounded(0.05rem);
@@ -152,11 +152,11 @@ body {
   }
 
   &-shadow {
-    @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+    @include box-shadow(0 1px 7px rgba(0, 0, 0, 0.1));
   }
 
   &-shadow-large {
-    @include box-shadow(0 3px 10px rgba(0, 0, 0, 0.2));
+    @include box-shadow(0 3px 15px rgba(0, 0, 0, 0.1));
   }
 
   &-border {
