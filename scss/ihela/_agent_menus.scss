@@ -47,6 +47,8 @@
   position: absolute;
   border: 1px solid $white-ter;
   @extend .is-rounded;
+  min-width: 200px;
+  z-index: 3000;
 
   &:focused, &:focus {
     @extend .has-text-primary;
