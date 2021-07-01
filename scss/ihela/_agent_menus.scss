@@ -44,6 +44,14 @@
 }
 
 .menu-list {
+  position: absolute;
+  border: 1px solid $white-ter;
+  @extend .is-rounded;
+
+  &:focused, &:focus {
+    @extend .has-text-primary;
+  }
+
   .list-item {
     @extend .has-background-white;
     // @extend .is-size-7 !optional;

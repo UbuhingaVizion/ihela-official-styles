@@ -15,8 +15,10 @@ body {
 
   @if mixin-exists(desktop) {
     @include desktop {
-      height: calc(100vh - 80px);
-      position: sticky;
+      // height: calc(100vh - 80px);
+      // position: sticky;
+      height: 100%;
+      // position: sticky;
       top: 80px;
     }
   }
