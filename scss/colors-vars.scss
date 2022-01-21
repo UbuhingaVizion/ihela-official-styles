@@ -1,0 +1,71 @@
+$dark-theme: "dark-theme";
+$light-theme: "light-theme";
+
+$ihelared-light: "ihelared-light";
+$ihelared: "ihela-red";
+$brown: "brown";
+$beige-light: "beige-light";
+$beige-lighter: "beige-lighter";
+
+$primary: "primary";
+$warning: "warning";
+$danger: "danger";
+$link: "link";
+$dark: "dark";
+$white: "white";
+$info: "info";
+$grey: "grey";
+
+$themes: (
+  $light-theme: (
+    $ihelared-light: #f70000,
+    $ihelared: #810019,
+    $brown: #757763,
+    $beige-light: #d0d1cd,
+    $beige-lighter: #eff0eb,
+
+    $primary: $ihelared,
+    $warning: #edbc37,
+    $danger: $ihelared-light,
+    $link: $ihelared,
+    $dark: #343a40,
+    $white: #fff,
+    $info: #17a2b8,
+    $grey: #6c757d,
+  ),
+  $dark-theme: (
+    $ihelared-light: #f70000,
+    $ihelared: #810019,
+    $brown: #757763,
+    $beige-light: #d0d1cd,
+    $beige-lighter: #eff0eb,
+
+    $primary: $ihelared,
+    $warning: #edbc37,
+    $danger: $ihelared-light,
+    $link: $ihelared,
+    $dark: #343a40,
+    $white: #fff,
+    $info: #17a2b8,
+    $grey: #6c757d,
+  )
+);
+
+@mixin themeProperty($theme, $property, $color, $additionalPropertiesPositionIsFront, $additionalProperties) {
+  @if $additionalPropertiesPositionIsFront {
+    #{$property}: unquote($additionalProperties + ' ' + map-get($theme, $color));
+  } @else {
+    #{$property}: unquote(map-get($theme, $color) + ' ' + $additionalProperties);
+  }
+}
+
+@mixin theme($property, $color, $additionalPropertiesPositionIsFront: false, $additionalProperties: '') {
+  $light: map-get($themes, $light-theme);
+  $dark: map-get($themes, $dark-theme);
+
+  @include themeProperty($light, $property, $color, $additionalPropertiesPositionIsFront, $additionalProperties);
+
+  @media (prefers-color-scheme: dark) {
+    @include themeProperty($dark, $property, $color, $additionalPropertiesPositionIsFront, $additionalProperties);
+  }
+}
